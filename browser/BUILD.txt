@@ -1,0 +1,20 @@
+Stockfish Hybrid V5 browser build
+================================
+
+The stockfish/src directory includes the applied browser patch.
+browser/browser.patch records the original port changes. The underlying hybrid
+is based on Stockfish revision 2ffd877d. The browser build uses the V5 policy
+from the 1,600-game November 24 match and the full value NNUE
+nn-c9e480e92425.nnue. The native match result does not measure browser playing
+strength.
+
+With Emscripten 6.0.9 active, run from the repository root:
+
+  bash browser/build.sh stockfish/src output simd
+  cp browser/worker.js weights.json output/
+  cp -r weights output/
+
+Serve output/ over HTTP. Load worker.js as a browser Worker and send it UCI
+strings. The worker fetches both networks using the local weights manifest.
+
+For an offline Linux build that embeds both networks, see the root README.

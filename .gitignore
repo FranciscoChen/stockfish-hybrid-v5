@@ -1,0 +1,8 @@
+/stockfish/src/nn-c9e480e92425.nnue*
+/stockfish/src/stockfish
+/stockfish/src/.depend
+/stockfish/src/.config
+*.o
+/output/
+/stockfish/src/.build_*.txt
+/stockfish/src/stockfish.exe
